@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://ctentrxomlaj6" path="res://Collsions/basic_wall_01.tscn" id="2_wosnj"]
 [ext_resource type="PackedScene" uid="uid://df2daml8opqy5" path="res://Collsions/flowerwindow.tscn" id="3_t3l2h"]
 [ext_resource type="PackedScene" uid="uid://xrvntm8mxn33" path="res://brackeys_3d_game_assets/brackeys_3d_game_assets/dungeon_assets/building/floor_stone.glb" id="4_a8auw"]
+[ext_resource type="PackedScene" uid="uid://dbpnehpannlaa" path="res://brackeys_3d_game_assets/brackeys_3d_game_assets/dungeon_assets/building/floor_wood.glb" id="6_a8auw"]
+[ext_resource type="PackedScene" uid="uid://c3fccqdm7ysxf" path="res://brackeys_3d_game_assets/brackeys_3d_game_assets/dungeon_assets/props/torch_mounted.glb" id="23_0hp1g"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vkdvt"]
 sky_top_color = Color(0.37884232, 0.47153312, 0.44730216, 1)
@@ -89,8 +91,8 @@ transform = Transform3D(-0.0005557398, -0.0014562743, 0.48888987, -0.00035533743
 size = Vector3(29, 20, 2)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=608648876]
-transform = Transform3D(0.48999998, 0, 0, 0, 0.616, 0, 0, 0, 0.56, -26.325731, 3.4623394, -14.081609)
-size = Vector3(25.887817, 22.04152, 285)
+transform = Transform3D(0.48999998, 0, 0, 0, 0.616, 0, 0, 0, 0.56, -27.117899, 3.4623394, -14.081609)
+size = Vector3(29.121155, 22.04152, 285)
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="." unique_id=604951382]
 transform = Transform3D(0.48999998, 0, 0, 0, 0.4928, 0, 0, 0, 0.56, 26.381132, 28.829983, -24.62153)
@@ -1784,3 +1786,18 @@ transform = Transform3D(2.8050003, 0, 0, 0, 1, 0, 0, 0, 2.85, 116.29032, 5.94919
 
 [node name="floor_stone259" parent="." unique_id=1807512703 instance=ExtResource("4_a8auw")]
 transform = Transform3D(2.8050003, 0, 0, 0, 1, 0, 0, 0, 2.85, 116.29032, 5.949198, 18.276085)
+
+[node name="torch_mounted2" parent="." unique_id=202088307 instance=ExtResource("23_0hp1g")]
+transform = Transform3D(0.1246847, 0, -2.2641728, 0, 1.8, 0, 2.293341, 0, 0.12309888, -22.74173, 18.34562, -48.99487)
+
+[node name="torch_mounted3" parent="." unique_id=65514831 instance=ExtResource("23_0hp1g")]
+transform = Transform3D(0.1246847, 0, -2.2641728, 0, 1.8, 0, 2.293341, 0, 0.12309888, -22.74173, 18.34562, -63.592533)
+
+[node name="floor_wood" parent="." unique_id=40315963 instance=ExtResource("6_a8auw")]
+transform = Transform3D(3.0602965, 0, 0, 0, 28.223005, 0, 0, 0, 11.2, -26.114525, 8.976115, 43.531662)
+
+[node name="floor_wood2" parent="." unique_id=432579341 instance=ExtResource("6_a8auw")]
+transform = Transform3D(3.0602965, 0, 0, 0, 28.223005, 0, 0, 0, 11.2, -26.114525, 8.976115, -0.468338)
+
+[node name="floor_wood3" parent="." unique_id=702354598 instance=ExtResource("6_a8auw")]
+transform = Transform3D(3.0602965, 0, 0, 0, 28.223005, 0, 0, 0, 11.2, -26.114525, 8.976115, -44.468338)
