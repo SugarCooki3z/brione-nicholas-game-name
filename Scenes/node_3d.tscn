@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://df2daml8opqy5" path="res://Collsions/flowerwindow.tscn" id="3_t3l2h"]
 [ext_resource type="PackedScene" uid="uid://xrvntm8mxn33" path="res://brackeys_3d_game_assets/brackeys_3d_game_assets/dungeon_assets/building/floor_stone.glb" id="4_a8auw"]
 [ext_resource type="PackedScene" uid="uid://dbpnehpannlaa" path="res://brackeys_3d_game_assets/brackeys_3d_game_assets/dungeon_assets/building/floor_wood.glb" id="6_a8auw"]
+[ext_resource type="PackedScene" uid="uid://cuayrm3ukpbh5" path="res://brackeys_3d_game_assets/brackeys_3d_game_assets/dungeon_assets/building/untitled.glb" id="7_ifh66"]
 [ext_resource type="PackedScene" uid="uid://c3fccqdm7ysxf" path="res://brackeys_3d_game_assets/brackeys_3d_game_assets/dungeon_assets/props/torch_mounted.glb" id="23_0hp1g"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vkdvt"]
@@ -1801,3 +1802,6 @@ transform = Transform3D(3.0602965, 0, 0, 0, 28.223005, 0, 0, 0, 11.2, -26.114525
 
 [node name="floor_wood3" parent="." unique_id=702354598 instance=ExtResource("6_a8auw")]
 transform = Transform3D(3.0602965, 0, 0, 0, 28.223005, 0, 0, 0, 11.2, -26.114525, 8.976115, -44.468338)
+
+[node name="untitled" parent="." unique_id=650551144 instance=ExtResource("7_ifh66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7469983, 7.8003197, 25.067795)
