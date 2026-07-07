@@ -25,6 +25,52 @@ tonemap_mode = 2
 ssao_enabled = true
 sdfgi_enabled = true
 
+[sub_resource type="Gradient" id="Gradient_ifh66"]
+colors = PackedColorArray(0.9999998, 0.28941464, 0.1320723, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_aeo3b"]
+gradient = SubResource("Gradient_ifh66")
+
+[sub_resource type="Curve" id="Curve_worak"]
+_limits = [0.0, 1.0, -65.36, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.43169403, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_rvjhm"]
+curve = SubResource("Curve_worak")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cb6ip"]
+lifetime_randomness = 1.0
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 1.0
+initial_velocity_max = 4.0
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = 39.999985
+gravity = Vector3(0, 1, 0)
+linear_accel_min = 0.99999774
+linear_accel_max = 4.9999976
+scale_min = 0.099999994
+scale_curve = SubResource("CurveTexture_rvjhm")
+color_initial_ramp = SubResource("GradientTexture1D_aeo3b")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vudi7"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0.14509805, 0.12156863, 1)
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_1vwyg"]
+material = SubResource("StandardMaterial3D_vudi7")
+
 [node name="Node3D" type="Node3D" unique_id=491783258]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=730409021]
@@ -862,7 +908,7 @@ transform = Transform3D(2.8050003, 0, 0, 0, 1, 0, 0, 0, 2.85, -14.921356, 5.9491
 transform = Transform3D(2.8050003, 0, 0, 0, 1, 0, 0, 0, 2.85, -3.7096786, 5.949198, -69.723915)
 
 [node name="floor_stone61" parent="." unique_id=1815059788 instance=ExtResource("4_a8auw")]
-transform = Transform3D(2.8050003, 0, 0, 0, 1, 0, 0, 0, 2.85, 7.078903, 5.949198, -80.61874)
+transform = Transform3D(2.8050003, 0, 0, 0, 1, 0, 0, 0, 2.85, 7.1340446, 6.022915, -80.53983)
 
 [node name="floor_stone62" parent="." unique_id=1317064516 instance=ExtResource("4_a8auw")]
 transform = Transform3D(2.8050003, 0, 0, 0, 1, 0, 0, 0, 2.85, 18.29058, 5.949198, -80.61874)
@@ -1791,8 +1837,24 @@ transform = Transform3D(2.8050003, 0, 0, 0, 1, 0, 0, 0, 2.85, 116.29032, 5.94919
 [node name="torch_mounted2" parent="." unique_id=202088307 instance=ExtResource("23_0hp1g")]
 transform = Transform3D(0.1246847, 0, -2.2641728, 0, 1.8, 0, 2.293341, 0, 0.12309888, -22.74173, 18.34562, -48.99487)
 
-[node name="torch_mounted3" parent="." unique_id=65514831 instance=ExtResource("23_0hp1g")]
-transform = Transform3D(0.1246847, 0, -2.2641728, 0, 1.8, 0, 2.293341, 0, 0.12309888, -22.74173, 18.34562, -63.592533)
+[node name="GPUParticles3D" type="GPUParticles3D" parent="torch_mounted2" unique_id=234906407]
+transform = Transform3D(0.41976756, 0, 1.8626451e-08, 0, 0.53093106, 0, 0, 0, 0.9684539, -0.004924774, 0.6542406, 0.29780197)
+amount = 500
+local_coords = true
+draw_order = 3
+process_material = SubResource("ParticleProcessMaterial_cb6ip")
+draw_pass_1 = SubResource("QuadMesh_1vwyg")
+
+[node name="torch_mounted3" parent="." unique_id=1680463106 instance=ExtResource("23_0hp1g")]
+transform = Transform3D(0.1246847, 0, -2.2641728, 0, 1.8, 0, 2.293341, 0, 0.12309888, -22.74173, 18.34562, -63.65477)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="torch_mounted3" unique_id=1512090284]
+transform = Transform3D(0.41976756, 0, 1.8626451e-08, 0, 0.53093106, 0, 0, 0, 0.9684539, -0.004924774, 0.6542406, 0.29780197)
+amount = 500
+local_coords = true
+draw_order = 3
+process_material = SubResource("ParticleProcessMaterial_cb6ip")
+draw_pass_1 = SubResource("QuadMesh_1vwyg")
 
 [node name="floor_wood" parent="." unique_id=40315963 instance=ExtResource("6_a8auw")]
 transform = Transform3D(3.0602965, 0, 0, 0, 28.223005, 0, 0, 0, 11.2, -26.114525, 8.976115, 43.531662)
